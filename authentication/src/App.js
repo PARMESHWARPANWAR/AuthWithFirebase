@@ -15,6 +15,7 @@ import "./App.css";
 import { auth } from "./firebase";
 import { BrowserRouter } from "react-router-dom";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Home from "./Home";
 
 // const listOneInit = {
 // title: "Latest & Trending Movies",
@@ -194,7 +195,8 @@ function App() {
 
         <Route path="/profile" element = {user ? <Profile user={user} /> : <Navigate to="/login" />}/>
 
-        <Route exact path='/'>
+        <Route path='/' element = {<Home/>}>
+			{/* <h1>Home Page </h1> */}
         {/*<>
 			{showResults ?
 				<Results setLoading={setLoading} searchResult={searchResult} setMovieId={setMovieId} /> : 
